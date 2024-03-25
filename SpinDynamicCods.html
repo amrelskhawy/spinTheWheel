@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap" rel="stylesheet">
+    <style>
+      .c .s,
+      .c .s::before {
+        background-color: #fff;
+      }
+      .c .s,
+      .c .w {
+        border-radius: 50%;
+      }
+      .c .w {
+        position: relative;
+      }
+      .c .s,
+      .c .w .number {
+        position: absolute;
+        cursor: pointer;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Tajawal', sans-serif !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+       
+      }
+      .c,
+      .c .s {
+        justify-content: center;
+        display: flex;
+        transition: 1s ease-out;
+        transform: scale(1);
+      }
+      .c {
+       margin-top: 4.8%;
+        position: relative;
+        width: 320px;
+        height: 300px;
+        align-items: center;
+      }
+      .c .s {
+        width: 60px;
+        height: 60px;
+        z-index: 10;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #333;
+      }
+      .c .s::before {
+        content: "";
+        position: absolute;
+        top: -28px;
+        width: 20px;
+        height: 30px;
+        clip-path: polygon(50% 0, 15% 100%, 85% 100%);
+      }
+      .c .w {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: transform 3s ease-in-out;
+        
+        overflow: hidden;
+        box-shadow: 0 0 0 5px #333, 0 0 0 15px #fff, 0 0 0 18px #111;
+      }
+      .c .w .number {
+        width: 49%;
+        height: 50%;
+        background: var(--clr);
+        transform-origin: bottom right;
+        transform: rotate(calc(50.5deg * var(--i)));
+        clip-path: polygon(0 0, 59% 0, 100% 100%, 0 57%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        user-select: none;
+      }
+      .c .w .number span {
+        position: relative;
+        transform: rotate(-45deg);
+        font-size: 15px;
+        font-weight: 500;
+        text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+      }
+      .c .w .number .giftcode {
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(0 0, 70% 0, 100% 100%, 0 55%);
+        font-size: 24px;
+        padding-top:45px;
+        position: absolute;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(-45deg);
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        font-family: monospace;
+      }
+      .c .w .number .giftcode div {
+        display: flex;
+        gap: 5px;
+        flex-direction: row-reverse;
+      }
+      .c .w .number .giftcode span {
+        transform: rotate(0deg);
+      }
+      .copy {
+       
+        font-family: monospace;
+        position: relative;
+        border-radius: 30px;
+        font-size: 30px;
+        width: 345px;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        transition: 0.7s ease-in-out;
+        text-shadow: 3px 5px 2px rgba(0, 0, 0, 0.15);
+        padding: 10px;
+        display: none;
+        background-image: url(https://hosting.photobucket.com/images/i/Digi-Tell/yt.jpg);
+        background-size: cover;
+        background-position: center;
+        gap: 45px;
+        padding: 6px 0px 0px;
+        justify-content: center;
+      }
+      .copy p {
+        font-size: 24px;
+        text-align: center;
+        font-weight: bold;
+      }
+      .copy article {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+      .copy span {
+        color: #fff;
+        cursor: pointer;
+        transform: scale(1);
+        transition: 0.7s ease-in-out;
+      }
+      .copy p span span {
+        display: inline-block;
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #discount {
+        font-size: 20px;
+      }
+      .wheel-Img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 180%;
+        height: 185%;
+        top: -111px;
+        left: -125px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c">
+      <img
+        style="
+         z-index: 1;
+    width: 400px;
+    height: 420px;
+    position: relative;
+    top: 7%;
+    left: 0px;
+        "
+        src="https://hosting.photobucket.com/images/i/Digi-Tell/eid_wheel_-1.png"
+        alt=""
+      />
+      <div class="s">
+        <img
+          src="https://hosting.photobucket.com/images/i/Digi-Tell/03_1_-removebg-preview.png"
+          width="70"
+          style="
+            max-width: 50px;
+            transform: scale(2.3);
+            filter: invert(0);
+            margin-right: 4px;
+          "
+          alt=""
+        />
+      </div>
+      <div class="w">
+        <img
+          class="wheel-Img"
+          src="https://hosting.photobucket.com/images/i/Digi-Tell/eid_wheel_-2.png"
+          alt=""
+        />
+      </div>
+    </div>
+    <div class="copy">
+      <p style="display: flex; flex-direction: column; font-family: 'Tajawal', sans-serif;padding-top: 20px;">
+        مبروك <br>
+         حصلت على
+        <span
+          style="
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 10px;
+          "
+        >
+          <span id="discount">10</span>
+        </span>
+      </p>
+      <article style=" font-family: 'Tajawal', sans-serif;">
+        <div>WOW</div>
+        <span class="btn"
+          >
+        </span>
+      </article>
+    </div>
+    <script>
+      var spined = true;
+      var data = [
+        {
+          id: 1,
+          label: "⛽",
+          color: "transparent",
+          dis: "50% خصم على توصيل الغاز",
+          giftCode: "GAS50",
+          position: 2879,
+        },
+        {
+          id: 2,
+          label: "🌭",
+          color: "transparent",
+          dis: "99% خصم على رسوم التوصيل من كودو",
+          giftCode: "QUICK9",
+          position: 2823,
+        },
+        {
+          id: 3,
+          label: "🍩",
+          color: "transparent",
+          dis: "اطلب عرض دانكن ولك خصم 99% على التوصيل",
+          giftCode: "DD99",
+          position: 2766,
+        },
+        {
+          id: 4,
+          label: "🍔",
+          color: "transparent",
+          dis: "اطلب عرض جان ولك خصم 99% على التوصيل",
+          giftCode: "JANX99",
+          position: 2722,
+        },
+        {
+          id: 5,
+          label: "📦",
+          color: "transparent",
+          dis: "20% خصم على توصيل خدمة أرسلها",
+          giftCode: "SEND20",
+          position: 3034,
+        },
+        {
+          id: 6,
+          label: "🚚",
+          color: "transparent",
+          dis: "10% خصم على توصيل خدمة جب لي",
+          giftCode: "M10FEE",
+          position: 2984,
+        },
+        {
+          id: 7,
+          label: "🧁",
+          color: "transparent",
+          dis: "توصيل مجاني من حلويات روز",
+          giftCode: "ROSEFR",
+          position: 2576,
+        },
+      ];
+      let c = document.querySelector(".c");
+      let w = document.querySelector(".w");
+      let s = document.querySelector(".s");
+      let copy = document.querySelector(".copy");
+      let copyText = document.querySelector(".copy div");
+      let copybtn = document.querySelector(".copy .btn");
+      let discount = document.querySelector("#discount");
+      let deleteBtn = document.querySelector("#delete");
+      let value = Math.ceil(Math.random() * (6 - 0) + 0);
+      data.map((userData, index) => {
+        var div = document.createElement("div");
+        var span = document.createElement("span");
+        var spanCover = document.createElement("span");
+        div.className = "number";
+        div.setAttribute(
+          "style",
+          `--i: ${index + 1}; --clr: ${userData.color}`
+        );
+        span.setAttribute("id", userData.id + 10);
+        spanCover.className = "giftcode";
+        spanCover.setAttribute("id", userData.id);
+        spanCover.innerHTML = userData.label;
+        spanCover.style.backgroundColor = userData.color;
+        div.appendChild(span);
+        div.appendChild(spanCover);
+        w.appendChild(div);
+      });
+      s.onclick = function () {
+        if (spined) {
+          spined = false;
+          console.log(copyText);
+          w.style.transform = "rotate(" + data[value].position + "deg)";
+          
+          setTimeout(() => {
+            c.style.transform = "scale(0)";
+          }, 5000);
+          setTimeout(() => {
+            c.style.display = "none";
+            copyText.innerHTML = `<a href="https://mrsool.app.link/coupons?coupon_number=${data[value].giftCode}">اضغط هنا لتحصل علي الكود</a>`;
+            copy.style.display = "flex";
+            discount.innerHTML = data[value].dis;
+          }, 5500);
+        }
+      };
+      copybtn.onclick = function () {
+        copybtn.style.transform = "scale(0.8)";
+        setTimeout(() => {
+          copybtn.style.transform = "scale(1)";
+        }, 300);
+        const el = document.createElement("textarea");
+        const textToCopy = data[value].giftCode;
+        el.value = textToCopy;
+        el.setAttribute("readonly", "");
+        el.style.position = "absolute";
+        el.style.left = "-999999px";
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand("copy");
+        copyText.innerHTML = "تم النسخ";
+        copybtn.style.display = "none";
+      };
+    </script>
+  </body>
+</html>
